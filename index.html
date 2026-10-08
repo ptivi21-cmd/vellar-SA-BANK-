@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>SA — Public Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/sa-logo-official.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#portfolio"><img class="brand-logo" src="assets/sa-logo-official.png" alt="SA — Silent Ascend"><span>PUBLIC PORTFOLIO</span></a>
+    <nav>
+      <a href="#portfolio" data-tab="portfolio">Portfolio</a>
+      <a href="#sa" data-tab="sa">SA</a>
+      <a href="#donate" data-tab="donate">Donate</a>
+      <a href="#wall" data-tab="wall">Wall</a>
+      <a href="#economy" data-tab="economy">Economy</a>
+    </nav>
+    <div class="header-right"><div id="ton-connect"></div><span id="identityStatus" class="identity-status">WALLET NOT CONNECTED</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">SILENT ASCEND / ON-CHAIN</div>
+      <h1>PUBLIC<br><em>PORTFOLIO</em></h1>
+      <p class="hero-copy">Публичный портфель Silent Ascend. Рынок, позиции, донаты и живая стена сообщества — в одном пространстве.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#portfolio">Открыть портфель</a>
+        <a class="button ghost" href="#sa">SA market</a>
+        <a class="button ghost" href="#wall">SA wall</a>
+      </div>
+    </section>
+
+    <section id="portfolio" class="panel tab-panel">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / WALLET</div><h2>Публичный портфель</h2></div>
+        <span class="live"><i></i> LIVE DATA</span>
+      </div>
+
+      <div class="wallet-card">
+        <div>
+          <span class="label">TRACKED WALLET</span>
+          <div class="address" id="trackedAddress">UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv</div>
+        </div>
+        <a id="explorerLink" class="mini-link" target="_blank" rel="noopener">TONSCAN ↗</a>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card"><span>TON</span><strong id="tonBalance">—</strong><small id="tonValue">loading</small></article>
+        <article class="stat-card"><span>SA</span><strong id="saBalance">—</strong><small id="saValue">loading</small></article>
+        <article class="stat-card"><span>JETTONS</span><strong id="jettonCount">—</strong><small>assets detected</small></article>
+        <article class="stat-card"><span>UPDATED</span><strong id="updated">—</strong><small>browser time</small></article>
+      </div>
+
+      <div class="positions">
+        <div class="section-head compact"><div><div class="eyebrow">POSITIONS</div><h3>Assets</h3></div><button class="refresh" id="refresh">↻ Refresh</button></div>
+        <div id="positionsList" class="asset-list"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+      </div>
+    </section>
+
+    <section id="sa" class="panel tab-panel">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / MARKET PSYCHOLOGY</div><h2>SA Sentiment</h2></div>
+        <span class="live"><i></i> LIVE / 30 SEC</span>
+      </div>
+
+      <div class="market-card">
+        <div class="market-top">
+          <div class="token-title">
+            <div class="sa-icon"><img src="assets/sa-logo-official.png" alt="SA"></div>
+            <div>
+              <h3>Silent Ascend <span class="ticker">SA</span></h3>
+              <span id="marketCapText">Market Cap: —</span>
+            </div>
+          </div>
+          <div class="market-number">
+            <strong id="saPrice">$—</strong>
+            <span id="saChange">—</span>
+          </div>
+        </div>
+
+        <div class="sentiment-chart-wrap">
+          <div class="axis-labels">
+            <span id="axisMadness">Безумие</span>
+            <span id="axisGreed">Жадность</span>
+            <span id="axisCourage">Отвага</span>
+            <span id="axisFear">Страх</span>
+          </div>
+          <canvas id="saChart"></canvas>
+        </div>
+
+        <div class="chart-foot">
+          <span>● Updated <b id="marketUpdated">—</b></span>
+          <span>History: live market data</span>
+        </div>
+      </div>
+
+      <div class="theory">
+        <div class="eyebrow">ТЕОРИЯ</div>
+        <h3>Индикатор страха и безумия SA</h3>
+        <p>Цена SA проходит через четыре эмоциональные фазы рынка. В нижней зоне — <b class="fear">страх</b>. На отметке <b class="courage">$30K</b> капитализации — <b class="courage">отвага</b>. Выше рынок входит в <b class="greed">жадность</b>, а экстремальный рост приводит к <b class="madness">безумию</b>.</p>
+
+        <div class="phase-row">
+          <div class="phase fear-box"><span>Страх</span><small id="fearThreshold">≤ $10K</small></div>
+          <div class="arrow">→</div>
+          <div class="phase courage-box"><span>Отвага</span><small>$30K</small></div>
+          <div class="arrow">→</div>
+          <div class="phase greed-box"><span>Жадность</span><small>$100K</small></div>
+          <div class="arrow">→</div>
+          <div class="phase madness-box"><span>Безумие</span><small>$300K+</small></div>
+        </div>
+
+        <div class="current-phase">
+          <div>Сейчас в фазе: <strong id="currentPhase">СТРАХ</strong></div>
+          <div class="phase-track">
+            <div class="phase-fill" id="phaseFill"></div>
+            <i id="phaseMarker"></i>
+          </div>
+          <div class="phase-labels"><span>Страх</span><span>Отвага</span><span>Жадность</span><span>Безумие</span></div>
+        </div>
+      </div>
+
+      <div class="market-stats">
+        <div><span>PRICE</span><strong id="statPrice">—</strong></div>
+        <div><span>MARKET CAP</span><strong id="statMcap">—</strong></div>
+        <div><span>LIQUIDITY</span><strong id="statLiquidity">—</strong></div>
+        <div><span>24H VOLUME</span><strong id="statVolume">—</strong></div>
+      </div>
+
+      <p class="muted">Капитализация и цена берутся из on-chain DEX-рынка через индексатор. Сайт не подставляет фиктивную цену: если рынок не индексирован, показатель остаётся «—».</p>
+    </section>
+
+    <section id="donate" class="panel tab-panel">
+      <div class="section-head">
+        <div><div class="eyebrow">03 / SUPPORT</div><h2>Support SA</h2></div>
+      </div>
+      <div class="donate-grid">
+        <div class="donate-copy">
+          <h3>Поддержать проект</h3>
+          <p>Подключи свой TON-кошелёк и отправь выбранную сумму на публичный адрес проекта. Транзакцию подтверждаешь только в своём кошельке.</p>
+          <div class="donate-address">UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv</div>
+        </div>
+        <div class="donate-box">
+          <label>Сумма, TON</label>
+          <div class="presets">
+            <button data-amount="1">1</button><button data-amount="5">5</button><button data-amount="10">10</button>
+          </div>
+          <input id="customAmount" type="number" min="0.01" step="0.01" placeholder="Другая сумма">
+          <button id="donateButton" class="button primary full">Connect & Donate</button>
+          <div id="donateStatus" class="muted small">Нужен подключённый кошелёк.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+    <section id="wall" class="panel tab-panel">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / COMMUNITY</div><h2>SA Wall</h2></div>
+        <span class="live"><i></i> REALTIME</span>
+      </div>
+
+      <div class="profile-strip">
+        <div class="profile-main">
+          <div class="profile-avatar" id="profileAvatar"><img src="assets/sa-logo-official.png" alt="SA"></div>
+          <div>
+            <div class="label">YOUR IDENTITY</div>
+            <strong id="profileName">Подключи кошелёк</strong>
+            <div id="profileAddress" class="profile-address">Кошелёк не подключён</div>
+          </div>
+        </div>
+        <div class="profile-edit">
+          <input id="nicknameInput" maxlength="24" placeholder="Твой ник" disabled>
+          <button id="saveNickname" class="button ghost" disabled>Сохранить ник</button>
+        </div>
+      </div>
+
+      <div class="wall-layout">
+        <div class="feed-card">
+          <div class="feed-head">
+            <div><div class="eyebrow">DONATIONS + MESSAGES</div><h3>Стена</h3></div>
+            <button class="refresh" id="refreshWall">↻ Refresh</button>
+          </div>
+          <div id="wallFeed" class="wall-feed">
+            <div class="wall-empty">Подключи кошелёк, чтобы войти в стену SA.</div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="eyebrow">MESSAGE</div>
+          <h3>Оставить сообщение</h3>
+          <textarea id="messageInput" maxlength="500" placeholder="Напиши что-нибудь для стены SA…" disabled></textarea>
+          <button id="postMessage" class="button primary full" disabled>Опубликовать</button>
+          <p class="muted small">Сообщение публикуется от выбранного ника и привязанного к сессии кошелька.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="economy" class="panel tab-panel">
+      <div class="section-head">
+        <div><div class="eyebrow">05 / VELLAR ECONOMY</div><h2>Экономика Vellar</h2></div>
+        <span class="live"><i></i> COMMUNITY RULES</span>
+      </div>
+
+      <div class="economy-intro">
+        <div class="eyebrow">НАПРАВЛЕНИЕ ПОКУПОК</div>
+        <h3>Каждая покупка внутри государства Vellar распределяется по правилу 50 / 50.</h3>
+        <p>Это базовый принцип экономической модели Vellar: половина потока направляется на поддержку и откуп токена SA, а вторая половина остаётся для решений сообщества.</p>
+      </div>
+
+      <div class="economy-split">
+        <article class="economy-card sa-buyback">
+          <div class="economy-percent">50%</div>
+          <div class="economy-label">SA BUYBACK</div>
+          <h3>Откуп токена SA</h3>
+          <p>50% всех покупок внутри государства Vellar направляются на откуп токена SA.</p>
+        </article>
+        <article class="economy-card community-direction">
+          <div class="economy-percent">50%</div>
+          <div class="economy-label">COMMUNITY DIRECTION</div>
+          <h3>Направление средств</h3>
+          <p>Оставшиеся 50% — направление средств определяется лично вами в чате Vellar.</p>
+        </article>
+      </div>
+
+      <div class="economy-note">
+        <span>VELLAR ECONOMY</span>
+        <span>50% → SA / 50% → COMMUNITY</span>
+      </div>
+    </section>
+
+  <footer>
+    <span>SA / SILENT ASCEND</span>
+    <span>ON-CHAIN DATA • NOT FINANCIAL ADVICE</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
