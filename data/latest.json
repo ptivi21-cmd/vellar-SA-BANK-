@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-08T22:39:43.820Z",
+  "portfolio": {
+    "total": {
+      "value": 0,
+      "asOf": "2026-10-08T22:39:43.380Z",
+      "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+      "status": "CALCULATED"
+    },
+    "known": {
+      "value": 0,
+      "asOf": "2026-10-08T22:39:43.380Z",
+      "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+      "status": "CALCULATED"
+    },
+    "ton": {
+      "value": 0,
+      "asOf": "2026-10-08T22:39:43.380Z",
+      "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+      "status": "REAL"
+    },
+    "sa": {
+      "value": 0,
+      "asOf": "2026-10-08T22:39:43.801Z",
+      "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv/jettons?currencies=usd",
+      "status": "REAL"
+    },
+    "count": {
+      "value": 0,
+      "asOf": "2026-10-08T22:39:43.380Z",
+      "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv/jettons?currencies=usd",
+      "status": "CALCULATED"
+    },
+    "complete": true,
+    "assets": [
+      {
+        "id": "TON",
+        "symbol": "TON",
+        "name": "Toncoin",
+        "balance": 0,
+        "rawBalance": 0,
+        "price": 1.388167099740156,
+        "balanceAt": "2026-10-08T22:39:43.380Z",
+        "priceAt": "2026-10-08T22:39:43.405Z",
+        "source": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+        "explorer": "https://tonviewer.com/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+        "skewMs": 25,
+        "valueUsd": 0
+      }
+    ],
+    "accountStatus": "nonexist"
+  },
+  "market": {
+    "price": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "cap": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "fdv": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "liquidity": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "volume24": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "tx24": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "buys": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "sells": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "priceChange24": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "holders": {
+      "value": 4,
+      "asOf": "2026-10-08T22:39:43.820Z",
+      "source": "https://tonapi.io/v2/jettons/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "REAL"
+    },
+    "supply": {
+      "value": 100000000,
+      "asOf": "2026-10-08T22:39:43.820Z",
+      "source": "https://tonapi.io/v2/jettons/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "REAL"
+    },
+    "liquidityRatio": {
+      "value": null,
+      "asOf": "2026-10-08T22:39:43.323Z",
+      "source": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "status": "UNAVAILABLE"
+    },
+    "verification": "blacklist",
+    "pairAddress": null,
+    "priceScope": "Наиболее ликвидный доступный пул SA; объём и сделки относятся только к этому пулу."
+  },
+  "operations": [],
+  "sources": {
+    "account": {
+      "url": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv",
+      "receivedAt": "2026-10-08T22:39:43.380Z",
+      "error": null
+    },
+    "tokens": {
+      "url": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv/jettons?currencies=usd",
+      "receivedAt": "2026-10-08T22:39:43.801Z",
+      "error": null
+    },
+    "rates": {
+      "url": "https://tonapi.io/v2/rates?tokens=ton&currencies=usd",
+      "receivedAt": "2026-10-08T22:39:43.405Z",
+      "error": null
+    },
+    "jetton": {
+      "url": "https://tonapi.io/v2/jettons/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "receivedAt": "2026-10-08T22:39:43.820Z",
+      "error": null
+    },
+    "pairs": {
+      "url": "https://api.dexscreener.com/token-pairs/v1/ton/EQBW1ZPnrV2LujIKfwdctIy57c5-RFlkxAZDo9-CN5BtTWmC",
+      "receivedAt": "2026-10-08T22:39:43.323Z",
+      "error": null
+    },
+    "events": {
+      "url": "https://tonapi.io/v2/accounts/UQDpHoPi5JHFruwdiKHCGO68gVaW4lKN0arzTAoMWVDWrjuv/events?limit=100",
+      "receivedAt": "2026-10-08T22:39:43.370Z",
+      "error": null
+    }
+  }
+}

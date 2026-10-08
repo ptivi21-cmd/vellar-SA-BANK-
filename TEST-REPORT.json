@@ -1,0 +1,36 @@
+{
+  "base_path": "/sa-bank/",
+  "viewports": [
+    {
+      "width": 1440,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 320,
+      "horizontal_overflow": false
+    }
+  ],
+  "errors": [],
+  "local_404": [],
+  "status": "passed",
+  "unit_tests": {
+    "passed": 14,
+    "failed": 0
+  },
+  "github_deployment": "not_performed",
+  "official_assets": "awaiting_original_files",
+  "wall_end_to_end": "requires_user_repository",
+  "wallet_signing": "not_performed"
+}
